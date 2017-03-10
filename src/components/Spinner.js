@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import '../App.css';
 
 class Spinner extends React.Component {
   render() {
@@ -9,7 +8,8 @@ class Spinner extends React.Component {
         <div className="spinner">
           <div className="mask">
             <div className="maskedCircle">
-              <div className="circle"></div>
+              <div className="circle">
+              </div>
             </div>
           </div>
         </div>

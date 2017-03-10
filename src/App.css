@@ -1,24 +1,70 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
+/* Animation keyframes - you need to add prefixes */
+@keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* Loading animation container */
+.loading {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 120px;
+  height: 120px;
+  /* margin: -14px 0 0 -14px; */
+  border-radius: 100px;
+  background-color: #CCCCCC;
+}
+
+/* Inner circle */
+.loading .maskedCircle {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  border: 6px solid lightblue;
+}
+
+.maskedCircle {
+}
+
+/* This hides the other piece of the circle */
+.mask {
+  width: 10px;
+  height: 10px;
+  overflow: hidden;
+  /* border: solid black 1px; */
+  /* background-color: red; */
+}
+
+/* This is the size of the outerloop that the circle does */
+.loading .spinner {
+  position: absolute;
+  left: 30%;
+  top: 30%;
+  width: 100px;
+  height: 100px;
+  /* animation: spin 8s infinite linear; */
+  align-content: center;
+}
+
+/* Outer circle */
+.spinner {
+  border: solid black 1px;
+  background-color: white;
+  border-radius: 50px;
+  width: 10px;
+  height: 10px;
+}
+
+
+.circle {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  line-height: 200px;
+  color: white;
+  border-radius: 50%;
+  border: 2px solid brown;
+}
+

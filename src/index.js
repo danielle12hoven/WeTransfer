@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/Header';
-// import './index.css';
-import Spinner from './components/Spinner'
-import FileSharer from './components/Filesharer.jsx'
-import './App.css';
+import Spinner from './components/Spinner';
+import Loader from './components/Loader';
+// import FileSharer from './components/Filesharer.jsx'
+import './index.css';
 
 
 ReactDOM.render(
@@ -19,10 +19,8 @@ ReactDOM.render(
 );
 
 
+
 ReactDOM.render(
-  <FileSharer />,
-  document.getElementById('body')
+  <Loader />,
+  document.getElementById('fileShare')
 );
-
-
-

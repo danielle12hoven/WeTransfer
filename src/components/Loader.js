@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Spinner extends React.Component {
+
+class Loader extends React.Component {
   render() {
     return (
-
 
 <div id="loader-wrapper">
     <div id="loader"></div>
@@ -13,11 +13,9 @@ class Spinner extends React.Component {
       <button id="stopButton" type="submit">Stop</button>
     </div>
 </div>
-
-    );
+    )
   }
 }
 
 
-export default Spinner;
-
+export default Loader;

@@ -8,7 +8,7 @@
     left: 0;
     width: 80%;
     height: 80%;
-    z-index: 1000;
+    /* z-index: -1; */
     /* border: solid 1px red; */
 }
 /* To keep everything contained */
@@ -22,7 +22,7 @@
     margin: -75px 0 0 -75px;
     border-radius: 50%;
     border: transparent;
-    z-index: -1;
+    /* z-index: -1; */
 }
 
 #loader:before {
@@ -33,11 +33,11 @@
     right: 5px;
     bottom: 5px;
     border-radius: 50%;
-    border: 10px solid transparent;
+    border: 10px solid grey;
     border-top-color: #e74c3c;
     -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
     animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
-    background-color: #CCCCCC;
+    background-color: transparent;
 }
 
 #loader:after {
@@ -48,8 +48,8 @@
     right: 15px;
     bottom: 15px;
     border-radius: 50%;
-    border: 3px solid white;
-    background-color: white;
+    border: 3px solid transparent;
+    background-color: transparent;
 }
 
 @-webkit-keyframes spin {
@@ -66,17 +66,88 @@
 }
 
 
-#button-wrapper {
-    /* border: solid 1px green; */
-    margin-top: 32%;
+
+
+
+
+/* STOP WATCH */
+/* #fileShare {
+  margin-top: 100px;
+  z-index: 1000;
+  position: relative;
+  object-fit: contain;
 }
-#startButton {
-    display: inline-block;
-    position: absolute;
-    left: 50%;
+ */
+
+#watch-container {
+  display: flex;
+  object-fit: fill;
+  z-index: 1000;
 }
-#stopButton {
-    display: inline-block;
-    position: absolute;
-    left: 59%;
+
+.stopwatch {
+  text-align: center;
+  background-color: transparent;
 }
+
+.stopwatch-timer {
+  font-size: 76px;
+  font-weight: 100;
+  line-height: 160px;
+  border-width: 1px 0;
+  background-color: transparent;
+}
+
+
+/* LAPS */
+.stopwatch-laps {
+  padding: 0 0 0 20px;
+  list-style-type: none;
+}
+
+.stopwatch-lap {
+  font-size: 20px;
+  line-height: 60px;
+  padding-right: 20px;
+  text-align: right;
+  border-bottom: 1px solid #d9dae0;
+}
+
+.stopwatch-lap strong {
+  float: left;
+  color: #7f8083;
+  font-weight: 100;
+}
+
+.stopwatch-lap strong::before { content: 'Lap ' }
+
+
+/* BUTTONS */
+.btn {
+  font-family: inherit;
+  font-size: 20px;
+
+  display: inline-block;
+
+  width: 72px;
+  height: 72px;
+  margin: 24px;
+  padding-top: 120px;
+
+  cursor: pointer;
+  letter-spacing: 1px;
+
+  border: 0;
+  border-radius: 50%;
+  outline: none;
+  background: transparent;
+}
+
+
+.start-btn {
+  color: #4bd761;
+}
+.stop-btn  {
+  color: #fd3d2a
+}
+

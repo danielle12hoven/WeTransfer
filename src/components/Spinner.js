@@ -7,10 +7,8 @@ class Spinner extends React.Component {
 
 
 <div id="loader-wrapper">
-    <div id="loader"></div>
-    <div id="button-wrapper">
-      <button id="startButton" type="submit">Start</button>
-      <button id="stopButton" type="submit">Stop</button>
+    <div id="loader">
+      <div id="watch-container"></div>
     </div>
 </div>
 

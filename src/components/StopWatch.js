@@ -2,9 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 const formattedSeconds = (sec) =>
-  Math.floor(sec / 60) +
-    ':' +
-  ('0' + sec % 60).slice(-2)
+    Math.floor(sec / 100) +
+  ('0' + sec % 100).slice(-2) + '%'
 
 
 class StopWatch extends React.Component {
@@ -23,8 +22,16 @@ class StopWatch extends React.Component {
       this.setState({
         secondsElapsed: this.state.secondsElapsed + 1
       })
-    , 1000);
+    , 120);
   }
+
+// WORKING ON THIS //
+  handleReachesHundred() {
+    if (this.state.secondsElapsed === 100) {
+    clearInterval(this.incrementer);
+    }
+  }
+// WORKING ON THIS //
 
   handleStopClick() {
     clearInterval(this.incrementer);
@@ -41,11 +48,6 @@ class StopWatch extends React.Component {
     });
   }
 
-  handleLabClick() {
-    this.setState({
-      laps: this.state.laps.concat([this.state.secondsElapsed])
-    })
-  }
 
   render() {
     return (
@@ -59,19 +61,13 @@ class StopWatch extends React.Component {
         )}
 
 
-
-
         {(this.state.secondsElapsed !== 0 &&
           this.incrementer === this.state.lastClearedIncrementer
           ? <Button onClick={this.handleResetClick.bind(this)}>reset</Button>
           : null
         )}
 
-        <ul className="stopwatch-laps">
-          { this.state.laps.map((lap, i) =>
-              <li className="stopwatch-lap"><strong>{i + 1}</strong>/ {formattedSeconds(lap)}</li>)
-          }
-        </ul>
+
       </div>
     );
   }

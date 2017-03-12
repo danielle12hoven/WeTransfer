@@ -1,5 +1,5 @@
 .App-header {
-  margin-left: 42%;
+  margin-left: 41%;
 }
 
 #loader-wrapper {
@@ -71,21 +71,8 @@
 
 
 /* STOP WATCH */
-/* #fileShare {
-  margin-top: 100px;
-  z-index: 1000;
-  position: relative;
-  object-fit: contain;
-}
- */
-
-#watch-container {
-  display: flex;
-  object-fit: fill;
-  z-index: 1000;
-}
-
 .stopwatch {
+  padding-top: 50px;
   text-align: center;
   background-color: transparent;
 }
@@ -132,7 +119,7 @@
   width: 72px;
   height: 72px;
   margin: 24px;
-  padding-top: 120px;
+  padding-top: 60px;
 
   cursor: pointer;
   letter-spacing: 1px;

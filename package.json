@@ -29,5 +29,12 @@
   "bugs": {
     "url": "https://github.com/danielle12hoven/WeTransfer/issues"
   },
-  "homepage": "https://github.com/danielle12hoven/WeTransfer#readme"
+  "homepage": "https://github.com/danielle12hoven/WeTransfer#index.html"
 }
+// {
+//   "root": "build/",
+//   "clean_urls": false,
+//   "routes": {
+//     "/**": "index.html"
+//   }
+// }

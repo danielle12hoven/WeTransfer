@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import $ from 'jquery';
 
 const formattedSeconds = (sec) =>
     Math.floor(sec / 100) +
@@ -24,9 +25,12 @@ class Loader extends React.Component {
       }), 120);
   }
 
-  handleChangeLoad() {
-    this.css('background-color', 'black');
-  }
+  // handleChangeLoad() {
+  //     this.setState({
+  //         var spinCircle = ("#loader:after")
+  //     })
+  //   )
+  // }
 
 
 
@@ -64,10 +68,6 @@ class Loader extends React.Component {
           : null
         )}
 
-        {(this.state.secondsElapsed !== 0
-          ? <div id="main" onClick={this.handleChangeLoad.bind(this)}></div>
-          : <div id="main" onClick={this.handleChangeLoad.bind(this)}></div>
-        )}
       </div>
     );
   }
@@ -78,6 +78,10 @@ export default Loader;
 const Button = (props) =>
   <button type="button" {...props} className={"btn " + props.className } onClick={props.onClick} />;
 
+const fakeDropDown2 = function() {
+  $( "#loader" ).show("slow")
+}
+  $(".start-btn").click(fakeDropDown2)
 
 
 

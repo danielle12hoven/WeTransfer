@@ -6,7 +6,7 @@ const formattedSeconds = (sec) =>
   ('0' + sec % 100).slice(-2) + '%'
 
 
-class StopWatch extends React.Component {
+class Loader extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,17 +21,14 @@ class StopWatch extends React.Component {
     this.incrementer = setInterval( () =>
       this.setState({
         secondsElapsed: this.state.secondsElapsed + 1
-      })
-    , 120);
+      }), 120);
   }
 
-// WORKING ON THIS //
-  handleReachesHundred() {
-    if (this.state.secondsElapsed === 100) {
-    clearInterval(this.incrementer);
-    }
+  handleChangeLoad() {
+    this.css('background-color', 'black');
   }
-// WORKING ON THIS //
+
+
 
   handleStopClick() {
     clearInterval(this.incrementer);
@@ -51,8 +48,8 @@ class StopWatch extends React.Component {
 
   render() {
     return (
-      <div className="stopwatch">
-        <h1 className="stopwatch-timer">{formattedSeconds(this.state.secondsElapsed)}</h1>
+      <div className="percentage">
+        <h1 className="percentage-loader">{formattedSeconds(this.state.secondsElapsed)}</h1>
 
         {(this.state.secondsElapsed === 0 ||
           this.incrementer === this.state.lastClearedIncrementer
@@ -67,14 +64,20 @@ class StopWatch extends React.Component {
           : null
         )}
 
-
+        {(this.state.secondsElapsed !== 0
+          ? <div id="main" onClick={this.handleChangeLoad.bind(this)}></div>
+          : <div id="main" onClick={this.handleChangeLoad.bind(this)}></div>
+        )}
       </div>
     );
   }
 }
 
-export default StopWatch;
+export default Loader;
 
 const Button = (props) =>
-  <button type="button" {...props} className={"btn " + props.className } />;
+  <button type="button" {...props} className={"btn " + props.className } onClick={props.onClick} />;
+
+
+
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/Header';
-import Spinner from './components/Spinner';
-import StopWatch from './components/StopWatch';
+// import Spinner from './components/Spinner';
+import Loader from './components/Loader';
 // import FileSharer from './components/Filesharer.jsx'
 import './index.css';
 
@@ -14,13 +14,6 @@ ReactDOM.render(
 
 
 ReactDOM.render(
-  <Spinner />,
-  document.getElementById('spinner')
-);
-
-
-
-ReactDOM.render(
-  <StopWatch />,
+  <Loader />,
   document.getElementById('watch-container')
 );

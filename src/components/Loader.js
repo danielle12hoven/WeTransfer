@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery';
+import $ from '../../jquery';
 
 const formattedSeconds = (sec) =>
     Math.floor(sec / 100) +
@@ -13,7 +13,7 @@ class Loader extends React.Component {
     this.state = {
       secondsElapsed: 0,
       laps: [],
-      lastClearedIncrementer: null
+      lastClearedIncrementer: null,
     };
     this.incrementer = null;
   }
@@ -21,18 +21,11 @@ class Loader extends React.Component {
   handleStartClick() {
     this.incrementer = setInterval( () =>
       this.setState({
+        colorChanged: this.state.colorChanged,
         secondsElapsed: this.state.secondsElapsed + 1
-      }), 120);
+      }), 120)
+     console.log("this is working")
   }
-
-  // handleChangeLoad() {
-  //     this.setState({
-  //         var spinCircle = ("#loader:after")
-  //     })
-  //   )
-  // }
-
-
 
   handleStopClick() {
     clearInterval(this.incrementer);
@@ -48,7 +41,6 @@ class Loader extends React.Component {
       laps: []
     });
   }
-
 
   render() {
     return (
@@ -67,7 +59,6 @@ class Loader extends React.Component {
           ? <Button onClick={this.handleResetClick.bind(this)}>reset</Button>
           : null
         )}
-
       </div>
     );
   }
@@ -77,11 +68,6 @@ export default Loader;
 
 const Button = (props) =>
   <button type="button" {...props} className={"btn " + props.className } onClick={props.onClick} />;
-
-const fakeDropDown2 = function() {
-  $( "#loader" ).show("slow")
-}
-  $(".start-btn").click(fakeDropDown2)
 
 
 
